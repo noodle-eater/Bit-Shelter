@@ -5,17 +5,17 @@ using UnityEngine;
 public class StorageNode : MonoBehaviour
 {
 
-    private OperatorNode operatorNode;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        operatorNode = FindObjectOfType<OperatorNode>();
-    }
+    private Connector connector;
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(operatorNode.GetResult());
+        if(connector != null)
+            connector.OperatorNodes.ForEach((op) => Debug.Log(op.GetResult()));
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        connector = other.GetComponent<Connector>();
+        Debug.Log("Storage");
     }
 }
