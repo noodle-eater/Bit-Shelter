@@ -1,0 +1,3 @@
+interface INodeType {
+    NodeType GetNodeType();
+}
