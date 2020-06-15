@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OperatorNode : MonoBehaviour
+public class OperatorNode : MonoBehaviour, INodeType
 {
 
     private InputNode[] inputs;
@@ -21,5 +21,10 @@ public class OperatorNode : MonoBehaviour
         var connector = other.GetComponent<Connector>();
         connector.AddOperator(this);
         Debug.Log("Operator");
+    }
+
+    public NodeType GetNodeType()
+    {
+        return NodeType.Operator;
     }
 }

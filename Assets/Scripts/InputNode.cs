@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
-public class InputNode : MonoBehaviour
+public class InputNode : MonoBehaviour, INodeType
 {
 
     public bool IsActive { get; private set; }
@@ -11,7 +11,6 @@ public class InputNode : MonoBehaviour
 
     private void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
-
         IsActive = false;
     }
 
@@ -26,5 +25,10 @@ public class InputNode : MonoBehaviour
         var connector = other.GetComponent<Connector>();
         connector.AddInput(this);
         Debug.Log("Input");
+    }
+
+    public NodeType GetNodeType()
+    {
+        return NodeType.Input;
     }
 }
