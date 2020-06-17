@@ -24,7 +24,6 @@ public class InputNode : MonoBehaviour, INodeType
     private void OnTriggerEnter2D(Collider2D other) {
         var connector = other.GetComponent<Connector>();
         connector.AddInput(this);
-        Debug.Log("Input");
     }
 
     public NodeType GetNodeType()

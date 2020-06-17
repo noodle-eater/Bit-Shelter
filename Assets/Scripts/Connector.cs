@@ -13,16 +13,11 @@ public class Connector : MonoBehaviour
         OperatorNodes = new List<OperatorNode>();
     }
 
-    private void Update() {
-        InputNodes.ForEach((input) => Debug.Log(input.IsActive));
-    }
-
     public void AddInput(InputNode inputNode) {
         InputNodes.Add(inputNode);
     }
 
     public void AddOperator(OperatorNode operatorNode) {
         OperatorNodes.Add(operatorNode);
-        Debug.Log("Add Nodes");
     }
 }

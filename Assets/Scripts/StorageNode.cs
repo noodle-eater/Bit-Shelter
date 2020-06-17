@@ -14,13 +14,17 @@ public class StorageNode : MonoBehaviour, INodeType
 
     private void Update()
     {
-        if(connector != null)
-            connector.OperatorNodes.ForEach((op) => Debug.Log(op.GetResult()));
+        if(connector != null) {
+            Debug.Log("Count : " + connector.OperatorNodes.Count);
+            connector.OperatorNodes.ForEach((op) =>  {
+                Debug.Log(op.GetResult());
+                Debug.Log(op.OperatorData.NodeTag);
+            });
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
         connector = other.GetComponent<Connector>();
-        Debug.Log("Storage");
     }
 
     public NodeType GetNodeType()
