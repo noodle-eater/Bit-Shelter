@@ -1,0 +1,4 @@
+interface IInitOnAwake
+{
+    void InitOnAwake();
+}
