@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class NodeData : MonoBehaviour
+public class NodeData : MonoBehaviour, IInitOnStart
 {
 
     public float YPosition;
@@ -8,7 +8,7 @@ public class NodeData : MonoBehaviour
     public string NodeTag;
     public NodeType Type;
 
-    private void Awake() {
+    public void InitOnStart() {
         YPosition = transform.position.y;
         XPosition = transform.position.x;
         NodeTag = tag;

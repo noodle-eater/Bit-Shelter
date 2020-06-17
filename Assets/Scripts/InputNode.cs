@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
-public class InputNode : MonoBehaviour, INodeType
+public class InputNode : MonoBehaviour, INodeType, IInitOnStart
 {
 
     public bool IsActive { get; private set; }
     private SpriteRenderer spriteRenderer;
-
-    private void Start() {
+    
+    public void InitOnStart() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         IsActive = false;
     }

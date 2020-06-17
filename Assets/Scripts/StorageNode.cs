@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StorageNode : MonoBehaviour, INodeType
+public class StorageNode : MonoBehaviour, INodeType, IInitOnStart
 {
 
     public NodeType Type { get; private set; }
     private Connector connector;
 
-    private void Start() {
+    public void InitOnStart() {
         Type = NodeType.Storage;
     }
 
