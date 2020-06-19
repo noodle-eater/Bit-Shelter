@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
-public class InputNode : MonoBehaviour, INodeType, IInitOnStart
+public class InputNode : MonoBehaviour, INodeType, IInitOnStart, IInputValue
 {
 
+    public int Result;
     public bool IsActive { get; private set; }
     private SpriteRenderer spriteRenderer;
+    private NodeData inputData;
+    private Connector connector;
     
     public void InitOnStart() {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        inputData = GetComponent<NodeData>();
         IsActive = false;
     }
 
@@ -18,16 +22,17 @@ public class InputNode : MonoBehaviour, INodeType, IInitOnStart
         if(Input.GetMouseButton(0)) {
             IsActive = !IsActive;
             spriteRenderer.color = IsActive ? Color.yellow : Color.white;
+            Result = Funct.ToInt(IsActive);
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other) {
-        var connector = other.GetComponent<Connector>();
-        connector.AddInput(this);
     }
 
     public NodeType GetNodeType()
     {
         return NodeType.Input;
+    }
+
+    public int GetInput()
+    {
+        return Result;
     }
 }

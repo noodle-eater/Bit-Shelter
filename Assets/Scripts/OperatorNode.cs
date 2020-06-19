@@ -17,20 +17,29 @@ public class OperatorNode : MonoBehaviour, INodeType, IInitOnStart, IInputValue
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        var connector = other.GetComponent<Connector>();
-        connector.AddOperator(this);
+        var slot = other.GetComponent<OutputSlotData>();
+
+        if(slot != null) {
+            slots.Add(slot.inputSlot);
+        }
     }
     
+    private void Update() {
+        Debug.Log(GetResult());
+    }
+
     public bool GetResult() {
-        switch(comparator) {
-            case OperatorType.Or : return ToBool(inputs[0]) || ToBool(inputs[1]);
-            case OperatorType.And : return ToBool(inputs[0]) && ToBool(inputs[1]);
-            // case OperatorType.Not : 
-            case OperatorType.NotOr : return !(ToBool(inputs[0]) || ToBool(inputs[1]));
-            case OperatorType.NotAnd : return !(ToBool(inputs[0]) && ToBool(inputs[1]));
-            default : return false;
+        if(slots.Count > 1) {
+            switch(comparator) {
+                case OperatorType.Or : return ToBool(slots[0].Result.GetInput()) || ToBool(slots[1].Result.GetInput());
+                case OperatorType.And : return ToBool(slots[0].Result.GetInput()) && ToBool(slots[1].Result.GetInput());
+                // case OperatorType.Not : 
+                case OperatorType.NotOr : return !(ToBool(slots[0].Result.GetInput()) || ToBool(slots[1].Result.GetInput()));
+                case OperatorType.NotAnd : return !(ToBool(slots[0].Result.GetInput()) && ToBool(slots[1].Result.GetInput()));
+                default : return false;
+            }
         }
-        
+        return false;
     }
 
     public int GetIntResult() {
@@ -44,5 +53,10 @@ public class OperatorNode : MonoBehaviour, INodeType, IInitOnStart, IInputValue
 
     private bool ToBool(int value) {
         return value == 1;
+    }
+
+    public int GetInput()
+    {
+        return Funct.ToInt(GetResult());
     }
 }
