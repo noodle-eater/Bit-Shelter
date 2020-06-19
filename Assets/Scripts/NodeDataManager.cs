@@ -57,6 +57,7 @@ public class NodeDataManager : MonoBehaviour, IInitOnStart
                 order = ++stackOrderCounter;
             }
             stackOrders.Add(new StackOrder { Key = node.NodeTag, Order = order, Node = node });
+            node.Order = order;
         });
     }
 

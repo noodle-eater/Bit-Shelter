@@ -7,6 +7,7 @@ public class NodeData : MonoBehaviour, IInitOnStart
     public float XPosition;
     public string NodeTag;
     public NodeType Type;
+    public int Order;
 
     public void InitOnStart() {
         YPosition = transform.position.y;
