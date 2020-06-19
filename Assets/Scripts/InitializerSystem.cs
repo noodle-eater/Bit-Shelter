@@ -1,18 +1,21 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InitializerSystem : MonoBehaviour
 {
-    private void Awake() {
-        
+    private void Awake()
+    {
+        Funct.ForEach<IInitOnAwake>((item) => item.InitOnAwake());
     }
 
-    private void Start() {
-        FindObjectsOfType<InputNode>().ToList().ForEach((input) => input.InitOnStart());
-        FindObjectsOfType<OperatorNode>().ToList().ForEach((op) => op.InitOnStart());
-        FindObjectsOfType<StorageNode>().ToList().ForEach((storage) => storage.InitOnStart());
-        FindObjectsOfType<NodeData>().ToList().ForEach((node) => node.InitOnStart());
-        FindObjectOfType<NodeDataManager>().InitOnStart();
-        FindObjectsOfType<Connector>().ToList().ForEach((connector) => connector.InitOnStart());
+    private void Start()
+    {
+        Funct.ForEach<IInitOnStart>((item) => item.InitOnStart());
     }
+
+
+
+
 }
