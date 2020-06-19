@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
-public class OperatorNode : MonoBehaviour, INodeType, IInitOnStart
+public class OperatorNode : MonoBehaviour, INodeType, IInitOnStart, IInputValue
 {
 
+    public int Result = -1;
     public OperatorType comparator;
-    private int[] inputs = new int[2];
+    public List<int> inputs = new List<int>();
+    public List<InputSlotData> slots = new List<InputSlotData>();
 
     public NodeData OperatorData { get; private set; }
 
