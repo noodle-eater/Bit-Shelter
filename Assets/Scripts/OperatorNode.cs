@@ -24,9 +24,9 @@ public class OperatorNode : MonoBehaviour, INodeType, IInitOnStart, IInputValue
         }
     }
     
-    private void Update() {
-        Debug.Log(GetResult());
-    }
+    // private void Update() {
+    //     Debug.Log(GetResult());
+    // }
 
     public bool GetResult() {
         if(slots.Count > 1) {
