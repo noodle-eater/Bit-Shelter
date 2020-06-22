@@ -9,12 +9,9 @@ public class InputNode : MonoBehaviour, INodeType, IInitOnStart, IInputValue
     public int Result;
     public bool IsActive { get; private set; }
     private SpriteRenderer spriteRenderer;
-    private NodeData inputData;
-    private Connector connector;
     
     public void InitOnStart() {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        inputData = GetComponent<NodeData>();
         IsActive = false;
     }
 

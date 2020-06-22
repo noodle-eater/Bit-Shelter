@@ -1,20 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class OperatorNode : MonoBehaviour, INodeType, IInitOnStart, IInputValue
+public class OperatorNode : MonoBehaviour, INodeType, IInputValue
 {
 
-    public int Result = -1;
     public OperatorType comparator;
-    public List<int> inputs = new List<int>();
     public List<InputSlotData> slots = new List<InputSlotData>();
-
-    public NodeData OperatorData { get; private set; }
-
-    public void InitOnStart()
-    {
-        OperatorData = GetComponent<NodeData>();
-    }
 
     private void OnTriggerEnter2D(Collider2D other) {
         var slot = other.GetComponent<OutputSlotData>();
@@ -24,26 +15,18 @@ public class OperatorNode : MonoBehaviour, INodeType, IInitOnStart, IInputValue
         }
     }
     
-    // private void Update() {
-    //     Debug.Log(GetResult());
-    // }
-
     public bool GetResult() {
         if(slots.Count > 1) {
             switch(comparator) {
                 case OperatorType.Or : return ToBool(slots[0].Result.GetInput()) || ToBool(slots[1].Result.GetInput());
                 case OperatorType.And : return ToBool(slots[0].Result.GetInput()) && ToBool(slots[1].Result.GetInput());
-                // case OperatorType.Not : 
+                case OperatorType.Not : return !ToBool(slots[0].Result.GetInput());
                 case OperatorType.NotOr : return !(ToBool(slots[0].Result.GetInput()) || ToBool(slots[1].Result.GetInput()));
                 case OperatorType.NotAnd : return !(ToBool(slots[0].Result.GetInput()) && ToBool(slots[1].Result.GetInput()));
                 default : return false;
             }
         }
         return false;
-    }
-
-    public int GetIntResult() {
-        return 0;
     }
 
     public NodeType GetNodeType()

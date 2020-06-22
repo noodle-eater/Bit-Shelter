@@ -1,12 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class StorageNode : MonoBehaviour, INodeType, IInitOnStart
 {
 
     public NodeType Type { get; private set; }
-    private Connector connector;
 
     private InputSlotData slotData;
 
