@@ -16,7 +16,7 @@ public class OperatorNode : MonoBehaviour, INodeType, IInputValue
     }
     
     public bool GetResult() {
-        if(slots.Count > 1) {
+        if(slots.Count > 0) {
             switch(comparator) {
                 case OperatorType.Or : return ToBool(slots[0].Result.GetInput()) || ToBool(slots[1].Result.GetInput());
                 case OperatorType.And : return ToBool(slots[0].Result.GetInput()) && ToBool(slots[1].Result.GetInput());
