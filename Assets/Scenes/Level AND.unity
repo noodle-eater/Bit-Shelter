@@ -206,6 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Result: 0
+  spriteRenderer: {fileID: 0}
 --- !u!61 &142143546
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1146,6 +1147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Result: 0
+  spriteRenderer: {fileID: 0}
 --- !u!61 &1818676732
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1333,7 +1335,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1938487743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6edfb47acd0a5a458b3ff042756ddf3, type: 3}
+  m_Script: {fileID: 11500000, guid: 551d5357c4b14b349bbf697d966e4e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2146228586
