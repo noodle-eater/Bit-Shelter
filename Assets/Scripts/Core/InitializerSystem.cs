@@ -7,15 +7,11 @@ public class InitializerSystem : MonoBehaviour
 {
     private void Awake()
     {
-        Funct.ForEach<IInitOnAwake>((item) => item.InitOnAwake());
+        Fun.ForEach<IInitOnAwake>((item) => item.InitOnAwake());
     }
 
     private void Start()
     {
-        Funct.ForEach<IInitOnStart>((item) => item.InitOnStart());
+        Fun.ForEach<IInitOnStart>((item) => item.InitOnStart());
     }
-
-
-
-
 }

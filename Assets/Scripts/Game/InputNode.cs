@@ -19,7 +19,7 @@ public class InputNode : MonoBehaviour, INodeType, IInitOnStart, IInputValue
         if(Input.GetMouseButton(0)) {
             IsActive = !IsActive;
             spriteRenderer.color = IsActive ? Color.yellow : Color.white;
-            Result = Funct.ToInt(IsActive);
+            Result = Fun.ToInt(IsActive);
         }
     }
 

@@ -40,6 +40,6 @@ public class OperatorNode : MonoBehaviour, INodeType, IInputValue
 
     public int GetInput()
     {
-        return Funct.ToInt(GetResult());
+        return Fun.ToInt(GetResult());
     }
 }
