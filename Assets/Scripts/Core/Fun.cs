@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public sealed class Funct
+public sealed class Fun
 {
 
     public static void ForEach<T>(System.Action<T> OnAction)
@@ -32,5 +32,9 @@ public sealed class Funct
     public static int ToInt(bool value)
     {
         return value ? 1 : 0;
+    }
+
+    public static bool ToBool(int value) {
+        return value == 1;
     }
 }
