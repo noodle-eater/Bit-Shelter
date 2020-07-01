@@ -39,13 +39,17 @@ public sealed class Fun
         return value == 1;
     }
 
-    public static IEnumerator LoadSceneAsync(string sceneName, System.Action<float> OnLoading = null) {
+    public static IEnumerator LoadSceneAsync(string sceneName, float wait = 2, System.Action<float> OnLoading = null, System.Action OnComplete = null) {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
-
-        while(!operation.isDone) {
+        operation.allowSceneActivation = false;
+        while(operation.progress < .9f) {
             OnLoading?.Invoke(operation.progress);
 
             yield return null;
         }
+        yield return new WaitForSeconds(wait);
+        OnComplete?.Invoke();
+        operation.allowSceneActivation = true;
+        // SceneManager.LoadScene(sceneName);
     }
 }
