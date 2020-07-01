@@ -20,17 +20,21 @@ public class MainMenuController : MonoBehaviour
     {
         back = GetComponent<BackButtonController>();
 
-        playButton.onClick.AddListener(() => SceneManager.LoadScene("Level " + levelNumber));
+        playButton.onClick.AddListener(() => back.ChangeMenu(MenuType.Loading));
         settingButton.onClick.AddListener(() => back.ChangeMenu(MenuType.Setting));
         aboutButton.onClick.AddListener(() => back.ChangeMenu(MenuType.About));
         backAboutButton.onClick.AddListener(() => back.ChangeMenu(MenuType.Main));
-        addButton.onClick.AddListener(() => { levelNumber++; levelSelect.text = levelNumber.ToString(); });
+        addButton.onClick.AddListener(() => { levelNumber++; UpdateText(); });
         reduceButton.onClick.AddListener(() => { 
             if(levelNumber > 1) {
                 levelNumber--; 
                 levelSelect.text = levelNumber.ToString(); 
             }
         });
+    }
+
+    private void UpdateText() {
+        levelSelect.text = levelNumber.ToString();
     }
 
 }
