@@ -10,7 +10,7 @@ public class GameConfig : ScriptableObject {
 
     public static GameConfig Instance {
         get {
-            return Resources.Load<GameConfig>("Game Config");
+            return Resources.Load<GameConfig>("GameConfig");
         }
     }
 
