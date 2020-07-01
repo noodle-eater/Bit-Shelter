@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -36,5 +37,15 @@ public sealed class Fun
 
     public static bool ToBool(int value) {
         return value == 1;
+    }
+
+    public static IEnumerator LoadSceneAsync(string sceneName, System.Action<float> OnLoading = null) {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
+
+        while(!operation.isDone) {
+            OnLoading?.Invoke(operation.progress);
+
+            yield return null;
+        }
     }
 }
