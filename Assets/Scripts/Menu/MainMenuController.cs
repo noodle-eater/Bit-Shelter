@@ -20,11 +20,15 @@ public class MainMenuController : MonoBehaviour
     {
         back = GetComponent<BackButtonController>();
 
-        playButton.onClick.AddListener(() => back.ChangeMenu(MenuType.Loading));
         settingButton.onClick.AddListener(() => back.ChangeMenu(MenuType.Setting));
         aboutButton.onClick.AddListener(() => back.ChangeMenu(MenuType.About));
         backAboutButton.onClick.AddListener(() => back.ChangeMenu(MenuType.Main));
         addButton.onClick.AddListener(() => { levelNumber++; UpdateText(); });
+        playButton.onClick.AddListener(() => {
+            back.ChangeMenu(MenuType.Loading);
+            StartCoroutine(Fun.LoadSceneAsync("Level " + GameConfig.Instance.currentLevel, 1f
+                ,(progress) => Debug.Log("Loading : " + progress)));
+        });
         reduceButton.onClick.AddListener(() => { 
             if(levelNumber > 1) {
                 levelNumber--; 
