@@ -7,20 +7,26 @@ public class InputNode : MonoBehaviour, INodeType, IInitOnStart, IInputValue
 {
 
     public int Result;
-    public bool IsActive { get; private set; }
+    public bool isActive;
+    public bool IsActive { get => isActive; }
     private SpriteRenderer spriteRenderer;
     
     public void InitOnStart() {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        IsActive = false;
+        UpdateInput();
     }
 
     private void OnMouseDown() {
-        if(Input.GetMouseButton(0)) {
-            IsActive = !IsActive;
-            spriteRenderer.color = IsActive ? Color.yellow : Color.white;
-            Result = Fun.ToInt(IsActive);
+        if(Input.GetMouseButton(0))
+        {
+            isActive = !IsActive;
+            UpdateInput();
         }
+    }
+
+    private void UpdateInput() {
+        spriteRenderer.color = isActive ? Color.yellow : Color.white;
+        Result = Fun.ToInt(isActive);
     }
 
     public NodeType GetNodeType()
