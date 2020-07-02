@@ -796,6 +796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Result: 0
+  isActive: 1
 --- !u!61 &1818676732
 BoxCollider2D:
   m_ObjectHideFlags: 0
