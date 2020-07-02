@@ -50,6 +50,13 @@ public sealed class Fun
         yield return new WaitForSeconds(wait);
         OnComplete?.Invoke();
         operation.allowSceneActivation = true;
-        // SceneManager.LoadScene(sceneName);
     }
+
+    public static void When(bool condition, System.Action OnTrue, System.Action OnFalse = null) {
+        if(condition) {
+            OnTrue?.Invoke();
+        } else {
+            OnFalse?.Invoke();
+        }
+    }    
 }
