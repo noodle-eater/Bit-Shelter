@@ -9,10 +9,7 @@ public sealed class Fun
     public static void ForEach<T>(System.Action<T> OnAction)
     {
         var items = FindAll<T>();
-        foreach (var item in items)
-        {
-            OnAction(item);
-        }
+        items.ForEach((item) => OnAction?.Invoke(item));
     }
 
     public static List<T> FindAll<T>()
