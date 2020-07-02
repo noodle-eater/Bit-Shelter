@@ -12,19 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 981de17d3e6b78c4c94dfde993742107, type: 3}
   m_Name: MenuTweenConfig
   m_EditorClassIdentifier: 
-  mainMenu:
-    targetPosition: {x: 0, y: 0}
-    duration: 1
-    snap: 0
-  aboutMenu:
-    targetPosition: {x: 0, y: 0}
-    duration: 1
-    snap: 0
-  settingMenu:
-    targetPosition: {x: 0, y: 0}
-    duration: 1
-    snap: 0
-  loadingMenu:
-    targetPosition: {x: 0, y: 0}
-    duration: 1
-    snap: 0
+  duration: 1
+  snap: 0
