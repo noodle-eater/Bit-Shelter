@@ -2245,6 +2245,7 @@ MonoBehaviour:
   reduceButton: {fileID: 464127538}
   addButton: {fileID: 697328112}
   backAboutButton: {fileID: 1338391787}
+  loadingText: {fileID: 410674073}
 --- !u!4 &1292660852
 Transform:
   m_ObjectHideFlags: 0

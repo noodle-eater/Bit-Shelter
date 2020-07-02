@@ -12,6 +12,7 @@ public class MainMenuController : MonoBehaviour
     public Button reduceButton;
     public Button addButton;
     public Button backAboutButton;
+    public Text loadingText;
 
     private int levelNumber = 1;
     private BackButtonController back;
@@ -26,6 +27,7 @@ public class MainMenuController : MonoBehaviour
         addButton.onClick.AddListener(() => { levelNumber++; UpdateText(); });
         playButton.onClick.AddListener(() => {
             back.ChangeMenu(MenuType.Loading);
+            loadingText.text = "Loading Level " + levelNumber;
             StartCoroutine(Fun.LoadSceneAsync("Level " + GameConfig.Instance.currentLevel, 1f
                 ,(progress) => Debug.Log("Loading : " + progress)));
         });
