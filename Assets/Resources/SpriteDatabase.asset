@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8977a23574e149d43928dd74e693171e, type: 3}
+  m_Name: SpriteDatabase
+  m_EditorClassIdentifier: 
+  database:
+  - key: and
+    spriteOn: {fileID: -1261539650170858554, guid: 480a9b50b825e1b46abdaa55fb28361e,
+      type: 3}
+    spriteOff: {fileID: 1175507451126703208, guid: 480a9b50b825e1b46abdaa55fb28361e,
+      type: 3}
+  - key: not
+    spriteOn: {fileID: -7664223361120080754, guid: 480a9b50b825e1b46abdaa55fb28361e,
+      type: 3}
+    spriteOff: {fileID: 4433601607706919132, guid: 480a9b50b825e1b46abdaa55fb28361e,
+      type: 3}
+  - key: or
+    spriteOn: {fileID: 1036198670840123392, guid: 480a9b50b825e1b46abdaa55fb28361e,
+      type: 3}
+    spriteOff: {fileID: 4566730915758640122, guid: 480a9b50b825e1b46abdaa55fb28361e,
+      type: 3}
+  - key: switch
+    spriteOn: {fileID: 1322175891443298078, guid: 480a9b50b825e1b46abdaa55fb28361e,
+      type: 3}
+    spriteOff: {fileID: -8976346500380726838, guid: 480a9b50b825e1b46abdaa55fb28361e,
+      type: 3}
+  - key: lamp
+    spriteOn: {fileID: 5024876143660693958, guid: 480a9b50b825e1b46abdaa55fb28361e,
+      type: 3}
+    spriteOff: {fileID: 6587745341151771526, guid: 480a9b50b825e1b46abdaa55fb28361e,
+      type: 3}
