@@ -9,9 +9,13 @@ public class StorageNode : MonoBehaviour, INodeType, IInitOnStart
 
     private InputSlotData slotData;
     private bool isFinish = false;
+    private SpriteRenderer spriteRenderer;
+    private SpriteDatabase database;
 
     public void InitOnStart() {
         Type = NodeType.Storage;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        database = SpriteDatabase.Load();
     }
 
     private void Update() {
@@ -20,7 +24,9 @@ public class StorageNode : MonoBehaviour, INodeType, IInitOnStart
             Debug.Log(slotData.Result.GetInput());
             #endif
 
-            if(slotData.Result.GetInput() == 1 && !isFinish) {
+            spriteRenderer.sprite = database.GetSprite("lamp", Fun.ToBool(slotData.Result.GetInput()));
+
+            if(Fun.ToBool(slotData.Result.GetInput()) && !isFinish) {
                 isFinish = true;
 
                 if(GameConfig.Instance.currentLevel < GameConfig.Instance.maxLevel) {
