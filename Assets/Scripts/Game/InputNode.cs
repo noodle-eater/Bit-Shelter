@@ -25,7 +25,8 @@ public class InputNode : MonoBehaviour, INodeType, IInitOnStart, IInputValue
     }
 
     private void UpdateInput() {
-        spriteRenderer.color = isActive ? Color.yellow : Color.white;
+        // spriteRenderer.color = isActive ? Color.yellow : Color.white;
+        spriteRenderer.sprite = SpriteDatabase.Load().GetSprite("switch", isActive);
         Result = Fun.ToInt(isActive);
     }
 
