@@ -15,6 +15,17 @@ public class AudioDatabase : ScriptableObject {
         });
     }
 
+    public AudioClip GetAudio(string fileName) {
+        foreach (var item in audio)
+        {
+            if(item.clip.name == fileName) {
+                return item.clip;
+            }
+        }
+
+        return null;
+    }
+
     public static AudioDatabase Get(string fileName) {
         return Resources.Load<AudioDatabase>(fileName);
     }
