@@ -18,7 +18,8 @@ public class OperatorNode : MonoBehaviour, INodeType, IInputValue, IInitOnStart
 
     private void FixedUpdate()
     {
-        spriteRenderer.sprite = database.GetSprite(comparator.ToString().ToLower(), GetResult());
+        if(spriteRenderer != null)
+            spriteRenderer.sprite = database.GetSprite(comparator.ToString().ToLower(), GetResult());
     }
 
     private void OnTriggerEnter2D(Collider2D other)

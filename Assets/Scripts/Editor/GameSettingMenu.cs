@@ -15,6 +15,12 @@ public class GameSettingMenu {
         Debug.Log("<color=green>Environment is set to Production</color>");
     }
 
+    [MenuItem("Game/Disable Load Next Level")]
+    public static void DisableLoadNextLevel() {
+        PlayerSettings.SetScriptingDefineSymbolsForGroup(BuildTargetGroup.WebGL, "SANDBOX;DISABLE_NEXT_LEVEL");
+        Debug.Log("<color=green>Environment is set to Production</color>");
+    }
+
     [MenuItem("Game/Reset GameConfig")]
     public static void ResetGameConfig() {
         GameConfig.Instance.bgmVolume = 1;
