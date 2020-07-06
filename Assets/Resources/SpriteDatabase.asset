@@ -38,3 +38,13 @@ MonoBehaviour:
       type: 3}
     spriteOff: {fileID: 6587745341151771526, guid: 480a9b50b825e1b46abdaa55fb28361e,
       type: 3}
+  - key: notor
+    spriteOn: {fileID: -8651397232607713431, guid: f099b537421c31a49b9cc7c35489be55,
+      type: 3}
+    spriteOff: {fileID: -3185542263899592485, guid: f099b537421c31a49b9cc7c35489be55,
+      type: 3}
+  - key: notand
+    spriteOn: {fileID: 7069199622259331501, guid: f099b537421c31a49b9cc7c35489be55,
+      type: 3}
+    spriteOff: {fileID: 735874003162860576, guid: f099b537421c31a49b9cc7c35489be55,
+      type: 3}
