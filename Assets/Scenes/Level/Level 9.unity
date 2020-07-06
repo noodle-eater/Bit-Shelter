@@ -393,6 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Result: 0
+  isActive: 0
 --- !u!61 &142143546
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -989,7 +990,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1e050bab65f1569448ef1927dbd09583, type: 3}
-  m_Color: {r: 0.82579726, g: 1, b: 0.5188679, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1541,6 +1542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Result: 0
+  isActive: 0
 --- !u!61 &1392199818
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1907,7 +1909,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1e050bab65f1569448ef1927dbd09583, type: 3}
-  m_Color: {r: 0.82579726, g: 1, b: 0.5188679, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2177,6 +2179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Result: 0
+  isActive: 0
 --- !u!61 &1706417183
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2612,6 +2615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Result: 0
+  isActive: 0
 --- !u!61 &1818676732
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2697,7 +2701,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1e050bab65f1569448ef1927dbd09583, type: 3}
-  m_Color: {r: 0.82579726, g: 1, b: 0.5188679, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3041,7 +3045,7 @@ GameObject:
   - component: {fileID: 2146228589}
   - component: {fileID: 2146228590}
   m_Layer: 0
-  m_Name: Hexagon
+  m_Name: Result
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3087,7 +3091,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c6c067415fc29df44a8121dd9c012566, type: 3}
-  m_Color: {r: 1, g: 0.89899117, b: 0.6886792, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
