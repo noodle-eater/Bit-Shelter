@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3056d47d0a019844cb26a02f98e76342, type: 3}
+  m_Name: CreditsConfig
+  m_EditorClassIdentifier: 
+  database:
+  - assetName: PixelFJVerdana12pt
+    creator: flashjunior
+    desc: https://www.1001fonts.com/pix-pixelfjverdana12pt-font.html
+  creditHeader: Developed by Noodle Eater
+  myCreditText: About
+  creditFormat: '#asset created by #creator in #desc'
