@@ -1,8 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioPlayer : MonoBehaviour, IInitOnAwake, IInitOnStart {
     
     public AudioDatabase database;
+    public List<string> playList = new List<string>();
     
     private AudioSource bgmPlayer;
     private AudioSource sfxPlayer;
@@ -18,6 +20,15 @@ public class AudioPlayer : MonoBehaviour, IInitOnAwake, IInitOnStart {
         bgmPlayer.playOnAwake = true;
         bgmPlayer.loop = true;
         SetVolume();
+        
+        foreach(var item in playList) {
+            if(database.AudioClips.ContainsKey(item)) {
+                var data = database.AudioClips[item];
+                if(data.type == GameAudioType.BGM) {
+                    PlayBGM(item);
+                }
+            }
+        }
     }
 
     public void PlayBGM(string bgmName) {
