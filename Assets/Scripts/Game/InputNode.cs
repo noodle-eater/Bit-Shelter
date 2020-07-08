@@ -22,7 +22,7 @@ public class InputNode : MonoBehaviour, INodeType, IInitOnStart, IInputValue
         if(Input.GetMouseButton(0))
         {
             isActive = !IsActive;
-            audioPlayer.PlaySFX("switch");
+            audioPlayer.PlaySwitch();
             UpdateInput();
         }
     }

@@ -7,12 +7,14 @@ public class AudioPlayer : MonoBehaviour, IInitOnAwake, IInitOnStart {
     public List<string> playList = new List<string>();
     
     private AudioSource bgmPlayer;
-    private AudioSource sfxPlayer;
+    private AudioSource switchSfx;
+    private AudioSource completeSfx;
 
     public void InitOnAwake()
     {
         bgmPlayer = gameObject.AddComponent<AudioSource>();
-        sfxPlayer = gameObject.AddComponent<AudioSource>();
+        switchSfx = gameObject.AddComponent<AudioSource>();
+        completeSfx = gameObject.AddComponent<AudioSource>();
     }
 
     public void InitOnStart()
@@ -37,14 +39,23 @@ public class AudioPlayer : MonoBehaviour, IInitOnAwake, IInitOnStart {
     }
 
     public void PlaySFX(string sfxName) {
-        sfxPlayer.clip = database.GetAudio(sfxName);
-        bgmPlayer.Play();
+        switchSfx.clip = database.GetAudio(sfxName);
+        switchSfx.Play();
     }
 
-    private void SetVolume()
+    public void PlaySwitch() {
+        PlaySFX("switch");
+    }
+
+    public void PlayComplete() {
+        completeSfx.clip = database.GetAudio("complete");
+        completeSfx.Play();
+    }
+
+    public void SetVolume()
     {
         bgmPlayer.volume = GameConfig.Instance.bgmVolume;
-        sfxPlayer.volume = GameConfig.Instance.sfxVolume;
+        switchSfx.volume = GameConfig.Instance.sfxVolume;
     }
 
 }

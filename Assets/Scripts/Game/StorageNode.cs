@@ -31,23 +31,24 @@ public class StorageNode : MonoBehaviour, INodeType, IInitOnStart
             if(Fun.ToBool(slotData.Result.GetInput()) && !isFinish) {
                 isFinish = true;
 
-                audioPlayer.PlaySFX("complete");
+                audioPlayer.PlayComplete();
 
-                if(GameConfig.Instance.currentLevel < GameConfig.Instance.maxLevel) {
+                if(GameConfig.Instance.currentLevel < GameConfig.Instance.maxLevel + 1) {
                     GameConfig.Instance.currentLevel++;
                 }
                 
-                #if DISABLE_NEXT_LEVEL
+                // #if DISABLE_NEXT_LEVEL
                 GameObject.Find("Loading Panel").GetComponent<RectTransform>().DOAnchorPos(Vector2.zero, 1, false);
 
-                if(GameConfig.Instance.currentLevel >= GameConfig.Instance.maxLevel) {
+                if(GameConfig.Instance.currentLevel > GameConfig.Instance.maxLevel) {
                     FindObjectOfType<Text>().text = "Congrats!!! You Finish All the Level";
+                    GameConfig.Instance.currentLevel = 1;
                     StartCoroutine(Fun.LoadSceneAsync("Main Menu"));
                 } else {
                     StartCoroutine(Fun.LoadSceneAsync("Level " + GameConfig.Instance.currentLevel, 
                         OnLoading : (progress) => Debug.Log("Loading : " + progress)));
                 }
-                #endif
+                // #endif
             }
         }
     }
