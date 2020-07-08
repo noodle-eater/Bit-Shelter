@@ -11,14 +11,14 @@ public class AudioDatabase : ScriptableObject {
 
     private void OnEnable() {
         audio.ForEach(item => {
-            AudioClips.Add(item.clip.name.ToLower(), item);
+            AudioClips.Add(item.clipName, item);
         });
     }
 
     public AudioClip GetAudio(string fileName) {
         foreach (var item in audio)
         {
-            if(item.clip.name == fileName) {
+            if(item.clipName == fileName) {
                 return item.clip;
             }
         }
