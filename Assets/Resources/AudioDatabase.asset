@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e510792d3e75c944cbb1a1da4f1d5e36, type: 3}
   m_Name: AudioDatabase
   m_EditorClassIdentifier: 
-  audio: []
+  audio:
+  - clipName: bgm
+    clip: {fileID: 8300000, guid: 342300b64d9e77b488ac285ad1033833, type: 3}
+    type: 0
+  - clipName: switch
+    clip: {fileID: 8300000, guid: 66fbbabd062e61847960688216418346, type: 3}
+    type: 1
+  - clipName: complete
+    clip: {fileID: 8300000, guid: fb50b1dd835fda542850a6001eb724a6, type: 3}
+    type: 1
