@@ -8,11 +8,13 @@ public class InputNode : MonoBehaviour, INodeType, IInitOnStart, IInputValue
 
     public int Result;
     public bool isActive;
-    public bool IsActive { get => isActive; }
+    private AudioPlayer audioPlayer;
     private SpriteRenderer spriteRenderer;
+    public bool IsActive { get => isActive; }
     
     public void InitOnStart() {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioPlayer = FindObjectOfType<AudioPlayer>();
         UpdateInput();
     }
 
@@ -20,12 +22,12 @@ public class InputNode : MonoBehaviour, INodeType, IInitOnStart, IInputValue
         if(Input.GetMouseButton(0))
         {
             isActive = !IsActive;
+            audioPlayer.PlaySFX("switch");
             UpdateInput();
         }
     }
 
     private void UpdateInput() {
-        // spriteRenderer.color = isActive ? Color.yellow : Color.white;
         spriteRenderer.sprite = SpriteDatabase.Load().GetSprite("switch", isActive);
         Result = Fun.ToInt(isActive);
     }

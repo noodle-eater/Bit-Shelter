@@ -5,16 +5,17 @@ using UnityEngine.UI;
 public class StorageNode : MonoBehaviour, INodeType, IInitOnStart
 {
 
-    public NodeType Type { get; private set; }
-
+    private AudioPlayer audioPlayer;
     private InputSlotData slotData;
     private bool isFinish = false;
-    private SpriteRenderer spriteRenderer;
     private SpriteDatabase database;
+    private SpriteRenderer spriteRenderer;
+    public NodeType Type { get; private set; }
 
     public void InitOnStart() {
         Type = NodeType.Storage;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioPlayer = FindObjectOfType<AudioPlayer>();
         database = SpriteDatabase.Load();
     }
 
@@ -29,6 +30,8 @@ public class StorageNode : MonoBehaviour, INodeType, IInitOnStart
 
             if(Fun.ToBool(slotData.Result.GetInput()) && !isFinish) {
                 isFinish = true;
+
+                audioPlayer.PlaySFX("complete");
 
                 if(GameConfig.Instance.currentLevel < GameConfig.Instance.maxLevel) {
                     GameConfig.Instance.currentLevel++;
