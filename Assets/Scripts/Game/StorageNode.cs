@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StorageNode : MonoBehaviour, INodeType, IInitOnStart
+public class StorageNode : MonoBehaviour, IInitOnStart
 {
 
     private AudioPlayer audioPlayer;
@@ -55,10 +55,5 @@ public class StorageNode : MonoBehaviour, INodeType, IInitOnStart
 
     private void OnTriggerEnter2D(Collider2D other) {
         slotData = other.GetComponent<OutputSlotData>().inputSlot;
-    }
-
-    public NodeType GetNodeType()
-    {
-        return NodeType.Storage;
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class OperatorNode : MonoBehaviour, INodeType, IInputValue, IInitOnStart
+public class OperatorNode : MonoBehaviour, IInputValue, IInitOnStart
 {
 
     public OperatorType comparator;
@@ -47,11 +47,6 @@ public class OperatorNode : MonoBehaviour, INodeType, IInputValue, IInitOnStart
             }
         }
         return false;
-    }
-
-    public NodeType GetNodeType()
-    {
-        return NodeType.Operator;
     }
 
     private bool ToBool(int value)

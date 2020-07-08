@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
-public class InputNode : MonoBehaviour, INodeType, IInitOnStart, IInputValue
+public class InputNode : MonoBehaviour, IInitOnStart, IInputValue
 {
 
     public int Result;
@@ -30,11 +30,6 @@ public class InputNode : MonoBehaviour, INodeType, IInitOnStart, IInputValue
     private void UpdateInput() {
         spriteRenderer.sprite = SpriteDatabase.Load().GetSprite("switch", isActive);
         Result = Fun.ToInt(isActive);
-    }
-
-    public NodeType GetNodeType()
-    {
-        return NodeType.Input;
     }
 
     public int GetInput()
