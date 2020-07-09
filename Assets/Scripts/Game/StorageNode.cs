@@ -38,14 +38,14 @@ public class StorageNode : MonoBehaviour, IInitOnStart
                 }
                 
                 // #if DISABLE_NEXT_LEVEL
-                GameObject.Find("Loading Panel").GetComponent<RectTransform>().DOAnchorPos(Vector2.zero, 1, false);
+                GameObject.Find("Loading Panel").GetComponent<RectTransform>().DOAnchorPos(Vector2.zero, 4, false);
 
                 if(GameConfig.Instance.currentLevel > GameConfig.Instance.maxLevel) {
                     FindObjectOfType<Text>().text = "Congrats!!! You Finish All the Level";
                     GameConfig.Instance.currentLevel = 1;
                     StartCoroutine(Fun.LoadSceneAsync("Main Menu"));
                 } else {
-                    StartCoroutine(Fun.LoadSceneAsync("Level " + GameConfig.Instance.currentLevel, 
+                    StartCoroutine(Fun.LoadSceneAsync("Level " + GameConfig.Instance.currentLevel, wait: 4,
                         OnLoading : (progress) => Debug.Log("Loading : " + progress)));
                 }
                 // #endif
