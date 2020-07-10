@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Result: 0
-  isActive: 0
+  isActive: 1
 --- !u!61 &142143546
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1273,7 +1273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Result: 0
-  isActive: 0
+  isActive: 1
 --- !u!61 &1392199818
 BoxCollider2D:
   m_ObjectHideFlags: 0
