@@ -1,6 +1,8 @@
 # Bit-Shelter
 A Puzzle Game about Logic Gate.
 
+You can play the game on [itch.io](https://noodleeater.itch.io/bit-shelter)
+
 ## Credits
 
 * [PixelFJVerdana12pt Font by flashjunior](https://www.1001fonts.com/pix-pixelfjverdana12pt-font.html)
