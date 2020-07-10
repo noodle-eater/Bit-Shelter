@@ -16,17 +16,17 @@ public class SettingMenuController : MonoBehaviour
     {
         audioPlayer = FindObjectOfType<AudioPlayer>();
 
-        bgmVolume.value = GameConfig.Instance.bgmVolume;
-        sfxVolume.value = GameConfig.Instance.sfxVolume;
+        bgmVolume.value = GlobalConfig.BgmVolume;
+        sfxVolume.value = GlobalConfig.SfxVolume;
 
         bgmVolume.onValueChanged.AddListener((value) =>
         {
-            GameConfig.Instance.bgmVolume = value;
+            GlobalConfig.BgmVolume = value;
             audioPlayer.SetVolume();
         });
         sfxVolume.onValueChanged.AddListener((value) =>
         {
-            GameConfig.Instance.sfxVolume = value;
+            GlobalConfig.SfxVolume = value;
             audioPlayer.SetVolume();
         });
 

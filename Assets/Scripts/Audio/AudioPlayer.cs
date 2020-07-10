@@ -54,8 +54,8 @@ public class AudioPlayer : MonoBehaviour, IInitOnAwake, IInitOnStart {
 
     public void SetVolume()
     {
-        bgmPlayer.volume = GameConfig.Instance.bgmVolume;
-        switchSfx.volume = GameConfig.Instance.sfxVolume;
+        bgmPlayer.volume = GlobalConfig.BgmVolume;
+        switchSfx.volume = GlobalConfig.SfxVolume;
     }
 
 }

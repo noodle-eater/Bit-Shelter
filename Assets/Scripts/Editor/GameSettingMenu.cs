@@ -23,9 +23,9 @@ public class GameSettingMenu {
 
     [MenuItem("Game/Reset GameConfig")]
     public static void ResetGameConfig() {
-        GameConfig.Instance.bgmVolume = 1;
-        GameConfig.Instance.sfxVolume = 1;
-        GameConfig.Instance.currentLevel = 1;
+        GlobalConfig.CurrentLevel = 1;
+        GlobalConfig.SfxVolume = .5f;
+        GlobalConfig.BgmVolume = .5f;
     }
 
 }

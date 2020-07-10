@@ -33,22 +33,20 @@ public class StorageNode : MonoBehaviour, IInitOnStart
 
                 audioPlayer.PlayComplete();
 
-                if(GameConfig.Instance.currentLevel < GameConfig.Instance.maxLevel + 1) {
-                    GameConfig.Instance.currentLevel++;
+                if(GlobalConfig.CurrentLevel < GlobalConfig.MaxLevel + 1) {
+                    GlobalConfig.CurrentLevel++;
                 }
                 
-                // #if DISABLE_NEXT_LEVEL
                 GameObject.Find("Loading Panel").GetComponent<RectTransform>().DOAnchorPos(Vector2.zero, 4, false);
 
-                if(GameConfig.Instance.currentLevel > GameConfig.Instance.maxLevel) {
+                if(GlobalConfig.CurrentLevel > GlobalConfig.MaxLevel) {
                     FindObjectOfType<Text>().text = "Congrats!!! You Finish All the Level";
-                    GameConfig.Instance.currentLevel = 1;
-                    StartCoroutine(Fun.LoadSceneAsync("Main Menu"));
+                    GlobalConfig.CurrentLevel = 1;
+                    StartCoroutine(Fun.LoadSceneAsync("Main Menu", wait: 4));
                 } else {
-                    StartCoroutine(Fun.LoadSceneAsync("Level " + GameConfig.Instance.currentLevel, wait: 4,
-                        OnLoading : (progress) => Debug.Log("Loading : " + progress)));
+                    FindObjectOfType<Text>().text = "Loading Level " + GlobalConfig.CurrentLevel;
+                    StartCoroutine(Fun.LoadSceneAsync("Level " + GlobalConfig.CurrentLevel, wait: 4));
                 }
-                // #endif
             }
         }
     }
