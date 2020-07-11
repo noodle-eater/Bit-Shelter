@@ -2,6 +2,7 @@
 A Puzzle Game about Logic Gate.
 
 You can play the game on [itch.io](https://noodleeater.itch.io/bit-shelter)
+And read the postmortem on [medium](https://medium.com/@amdhamdani/post-mortem-bit-shelter-2ae90c37ee5e)
 
 ## Credits
 
